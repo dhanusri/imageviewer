@@ -61,6 +61,8 @@ const styles = theme => ({
   }
 })
 
+//This page handles the header part of the image viewer application
+
 class Header extends Component{
 
   constructor(props){

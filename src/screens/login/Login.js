@@ -25,6 +25,7 @@ const styles = {
     }
 };
 
+//This page handles the login part of the image viewer application
 class Login extends Component {
 
     constructor() {
