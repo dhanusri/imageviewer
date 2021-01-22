@@ -1,15 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
-import { BrowserRouter } from 'react-router-dom'
+import Controller from './screens/Controller'
 
 ReactDOM.render(
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>,
+    <Controller/>,
     document.getElementById('root')
 );
-
-serviceWorker.unregister();

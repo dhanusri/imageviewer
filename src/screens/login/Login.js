@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
@@ -25,7 +26,6 @@ const styles = {
     }
 };
 
-//This page handles the login part of the image viewer application
 class Login extends Component {
 
     constructor() {
@@ -49,16 +49,12 @@ class Login extends Component {
 
         if (this.state.username === "admin" && this.state.password === "admin") {
             sessionStorage.setItem('username','admin');
-            sessionStorage.setItem('access-token', 'IGQVJVcC0xdG1WNFdZAUk1ocndZAM0dobWdfX2xadjhtRzVtenhEWjh3OUllZAnZAtbjMxdG00endiRUUydWVfOVJiZATFxdndzM2VxaURwSlhtZA05heXRON2haWElCOGN1bTZAlTzM3T0docnpudjVzT0hTc0tmUmRDMF9HcEtn');
+            sessionStorage.setItem('access-token', 'IGQVJWcXRRMk1PV3RDZAllGYTA1V01pcDJsYU9XOW12amIxa2xZAYUxKdGF6V2xCSFMybkJ0N05WVGM2ckdnWG91QkVveXdiTEtSNS1IVU8yUXJkLWJXSy1jdVZACLWZAEYkVqYm91R0ltV09pRU1WVnczaEJ2LTJFRlZANOXlJ');
             this.setState({ loggedIn: true });
-            this.navigateToHome();
+            this.props.history.push('/home');
         } else {
             this.setState({ incorrectUsernamePassword: "dispBlock" });
         }
-    }
-
-    navigateToHome = () =>{
-      this.props.history.push('/home');
     }
 
     inputUsernameChangeHandler = (e) => {
@@ -72,19 +68,18 @@ class Login extends Component {
     render() {
         return (
             <div className="main-container">
-                <Header
-                  screen={"Login"}/>
+                <Header/>
                 <Card style={styles.card}>
                     <CardContent>
                         <Typography style={styles.title}> LOGIN </Typography><br />
                         <FormControl required style={{width: '100%'}}>
                             <InputLabel htmlFor="username"> Username </InputLabel>
-                            <Input id="username" type="text" username={this.state.username} onChange={this.inputUsernameChangeHandler} />
+                            <Input id="username" type="text" value={this.state.username} onChange={this.inputUsernameChangeHandler} />
                             <FormHelperText className={this.state.usernameRequired}><span className="red">required</span></FormHelperText>
                         </FormControl><br /><br />
                         <FormControl required style={{width: '100%'}}>
                             <InputLabel htmlFor="password"> Password </InputLabel>
-                            <Input id="password" type="password" onChange={this.inputPasswordChangeHandler} />
+                            <Input id="password" type="password" onChange={this.inputPasswordChangeHandler} value={this.state.password} />
                             <FormHelperText className={this.state.passwordRequired}><span className="red">required</span></FormHelperText>
                         </FormControl><br /><br />
                         <div className={this.state.incorrectUsernamePassword}><span className="red"> Incorrect username and/or password </span></div><br />
@@ -96,4 +91,4 @@ class Login extends Component {
     }
 }
 
-export default Login;
+export default withRouter(Login);
