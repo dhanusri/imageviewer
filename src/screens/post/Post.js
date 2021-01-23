@@ -40,6 +40,7 @@ const classes = theme => ({
 class Post extends Component {
 
   constructor(props) {
+    
     super(props)
     this.state = {
       postData: null
@@ -178,7 +179,7 @@ class Post extends Component {
                 fullWidth 
                 className={classes.addCommentInput}
               >
-                <InputLabel htmlFor='add-comment-input1'>Add a comment</InputLabel>
+                <InputLabel htmlFor="add-comment-input1">Add a comment</InputLabel>
                 <Input
                   type='text'
                   id='add-comment-input1'
@@ -251,7 +252,7 @@ class Post extends Component {
               fullWidth 
               className={classes.addCommentInput}
             >
-              <InputLabel htmlFor='add-comment-input2'>Add a comment</InputLabel>
+              <InputLabel htmlFor="add-comment-input2">Add a comment</InputLabel>
               <Input
                 type='text'
                 id='add-comment-input2'
