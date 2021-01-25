@@ -14,6 +14,8 @@ import Input from '@material-ui/core/Input'
 import InputLabel from '@material-ui/core/InputLabel'
 import Button from '@material-ui/core/Button'
 
+
+
 const classes = theme => ({
   card: {
     margin: '5px'
@@ -36,6 +38,8 @@ const classes = theme => ({
     border: "1px solid grey"
   }
 })
+
+
 
 class Post extends Component {
 
@@ -122,14 +126,16 @@ class Post extends Component {
   formatLikeCount = count => {
     return `${count} ${count === 1 ? "like" : "likes"}`
   }
+  
 
   render() {
     const { classes, sourcePage } = this.props;
+  
     const { postData } = this.state;
     if (!postData) return "Loading";
     if (sourcePage && sourcePage === 'profile') {
       return (
-        <div className='profile-modal-container'>
+        <div className='profile-modal-container openPostModalHandler'>
           <img
             src={postData.mediaImageUrl}
             alt="Postima"
@@ -159,6 +165,16 @@ class Post extends Component {
                 </li>
               ))}
             </ul>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
             <CardActions className={classes.cardActions}>
               { postData.isLiked 
                 ? <Favorite 
@@ -197,7 +213,9 @@ class Post extends Component {
             </div>
           </div>
         </div>
+
       )
+      
     }
     return (
       <Card className={classes.card}>
@@ -238,6 +256,7 @@ class Post extends Component {
             }
             <span>{this.formatLikeCount(postData.likeCount)}</span>
           </CardActions>
+         
           <ul className='comments-list'>
             {postData.comments && postData.comments.map(comment => (
               <li>
