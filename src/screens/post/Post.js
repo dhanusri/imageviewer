@@ -14,6 +14,8 @@ import Input from '@material-ui/core/Input'
 import InputLabel from '@material-ui/core/InputLabel'
 import Button from '@material-ui/core/Button'
 
+
+
 const classes = theme => ({
   card: {
     margin: '5px'
@@ -37,9 +39,12 @@ const classes = theme => ({
   }
 })
 
+
+
 class Post extends Component {
 
   constructor(props) {
+    
     super(props)
     this.state = {
       postData: null
@@ -121,14 +126,16 @@ class Post extends Component {
   formatLikeCount = count => {
     return `${count} ${count === 1 ? "like" : "likes"}`
   }
+  
 
   render() {
     const { classes, sourcePage } = this.props;
+  
     const { postData } = this.state;
     if (!postData) return "Loading";
     if (sourcePage && sourcePage === 'profile') {
       return (
-        <div className='profile-modal-container'>
+        <div className='profile-modal-container openPostModalHandler'>
           <img
             src={postData.mediaImageUrl}
             alt="Postima"
@@ -158,6 +165,16 @@ class Post extends Component {
                 </li>
               ))}
             </ul>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
             <CardActions className={classes.cardActions}>
               { postData.isLiked 
                 ? <Favorite 
@@ -178,7 +195,7 @@ class Post extends Component {
                 fullWidth 
                 className={classes.addCommentInput}
               >
-                <InputLabel htmlFor='add-comment-input1'>Add a comment</InputLabel>
+                <InputLabel htmlFor="add-comment-input1">Add a comment</InputLabel>
                 <Input
                   type='text'
                   id='add-comment-input1'
@@ -196,7 +213,9 @@ class Post extends Component {
             </div>
           </div>
         </div>
+
       )
+      
     }
     return (
       <Card className={classes.card}>
@@ -237,6 +256,7 @@ class Post extends Component {
             }
             <span>{this.formatLikeCount(postData.likeCount)}</span>
           </CardActions>
+         
           <ul className='comments-list'>
             {postData.comments && postData.comments.map(comment => (
               <li>
@@ -251,7 +271,7 @@ class Post extends Component {
               fullWidth 
               className={classes.addCommentInput}
             >
-              <InputLabel htmlFor='add-comment-input2'>Add a comment</InputLabel>
+              <InputLabel htmlFor="add-comment-input2">Add a comment</InputLabel>
               <Input
                 type='text'
                 id='add-comment-input2'
