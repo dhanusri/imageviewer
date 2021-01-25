@@ -45,6 +45,8 @@
     position: relative;
     padding-bottom: 100%;
     overflow: hidden;
+  
+    
   }
   
   .post-image {
@@ -53,4 +55,6 @@
     left: 0;
     width: 100%;
     height: 100%;
+    
   }
+  

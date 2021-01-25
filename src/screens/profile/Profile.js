@@ -15,6 +15,7 @@ import Button from '@material-ui/core/Button'
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile'
 
+
 const classes = theme => ({
   avatar: {
     width: '144px',
@@ -35,6 +36,7 @@ const modalStyle = {
     bottom: 'auto',
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)'
+    
   }
 }
 
@@ -175,7 +177,7 @@ class Profile extends Component {
                     />
                   </div>
                   <Modal 
-                    style={modalStyle}
+                    style ={modalStyle}
                     ariaHideApp={false}
                     isOpen={this.state.isPostModalOpen}
                     contentLabel='postModal'
