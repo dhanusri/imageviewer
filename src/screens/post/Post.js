@@ -195,10 +195,10 @@ class Post extends Component {
                 fullWidth 
                 className={classes.addCommentInput}
               >
-                <InputLabel htmlFor="add-comment-input1">Add a comment</InputLabel>
+                <InputLabel htmlFor={postData.id+"comment"}>Add a comment</InputLabel>
                 <Input
                   type='text'
-                  id='add-comment-input1'
+                  id={postData.id+"comment"}
                   onChange={this.addCommentInputChangeHandler}
                   value={postData.addCommentInput} 
                 />
@@ -271,10 +271,10 @@ class Post extends Component {
               fullWidth 
               className={classes.addCommentInput}
             >
-              <InputLabel htmlFor="add-comment-input2">Add a comment</InputLabel>
+              <InputLabel htmlFor={postData.id+"comment"}>Add a comment</InputLabel>
               <Input
                 type='text'
-                id='add-comment-input2'
+                id={postData.id+"comment"}
                 onChange={this.addCommentInputChangeHandler}
                 value={postData.addCommentInput} 
               />
