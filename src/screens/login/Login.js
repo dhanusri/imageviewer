@@ -31,9 +31,9 @@ class Login extends Component {
     constructor() {
         super();
         this.state = {
-            username: "",
+            username: "amuthamahesh_",
             usernameRequired: "dispNone",
-            password: "",
+            password: "Venu2002",
             passwordRequired: "dispNone",
             incorrectUsernamePassword: "dispNone",
             loggedIn: sessionStorage.getItem('access-token') == null ? false : true
@@ -49,7 +49,7 @@ class Login extends Component {
 
         if (this.state.username === "admin" && this.state.password === "admin") {
             sessionStorage.setItem('username','admin');
-            sessionStorage.setItem('access-token', 'IGQVJVZAEhPNkliSlVsQ0RaOGxrWjV2M1g5Y1dmUXVHZAl9mMzdHLUlZANHZASX0gxM0pDbmVuSXUySkV2YXVYRDIxR0tTTkdpaG8wRWhFdW5IM1NBWmx3c1E2M2s5cFB6ZAnR4N1V4NXk0RGxmQVN5WUxIU25kNnBtb1ozUHJN');
+            sessionStorage.setItem('access-token', 'IGQVJXZAU5JRmVTWkI1M1hRVDhfa3NVRzQtV1lnR294UW51VEZAmQmptQjI3NENsUVZAnM2IxSGNvYXF5SWktazd4T3owVS1OaHNoS01odWpfS3NHYkEzTjYwQkxSMnZAOeHVDZAUZAmcFVoeTYwOUJ4MHV3M3Joam5iMUFsOTlR');
             this.setState({ loggedIn: true });
             this.props.history.push('/home');
         } else {
